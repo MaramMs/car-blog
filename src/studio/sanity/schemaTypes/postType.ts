@@ -16,6 +16,7 @@ export const postType = {
         source: "title",
         maxLength: 96,
       },
+      // @ts-ignore
       validation: (Rule) => Rule.required(),
     },
     {
@@ -83,6 +84,7 @@ export const postType = {
       author: "author.name",
       media: "mainImage",
     },
+    // @ts-ignore
     prepare(selection) {
       const { author } = selection;
       return {
