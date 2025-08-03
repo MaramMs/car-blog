@@ -1,3 +1,4 @@
+
 import { client } from "./client";
 
 interface FilterParams {
@@ -6,11 +7,41 @@ interface FilterParams {
   maxYear?: number;
 }
 
+interface Slug {
+  current: string;
+}
+
+interface ImageAsset {
+  url: string;
+}
+
+interface MainImage {
+  asset: ImageAsset;
+}
+
+interface CarModel {
+  title: string;
+  year: number;
+}
+
+interface Category {
+  title: string;
+  slug: Slug;
+}
+
+export interface Post {
+  title: string;
+  slug: Slug;
+  carModel?: CarModel;
+  mainImage?: MainImage;
+  category?: Category;
+}
+
 export async function filterPosts({
   modelIds,
   minYear,
   maxYear,
-}: FilterParams): Promise<any[]> {
+}: FilterParams): Promise<Post[]> {
   const query = `
   *[
     _type == "post" &&
