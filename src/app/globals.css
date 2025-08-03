@@ -1,17 +1,5 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -22,5 +10,45 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Tajawal', sans-serif;
+
+}
+/* swiper */
+.swiper-pagination {
+  bottom: 10px !important;
+  z-index: 10 !important;
+  position: absolute !important;
+  height: 20px;
+}
+.swiper-pagination-bullet-active {
+  background-color: #dd3b4a !important;
+}
+
+
+
+.swiper-pagination-bullet {
+  background-color: #999;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #dd3b4a;
+}
+.home-swiper .swiper-pagination{
+  bottom: 57px !important;
+  left: 20px!important;
+}
+.home-swiper .swiper-pagination-clickable .swiper-pagination-bullet {
+  width: 31px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  opacity: 50%;  
+}
+.home-swiper .swiper-pagination-bullet-active {
+  width: 53px !important;
+  height: 8px !important;
+  border-radius: 4px;
+  background-color: #DD3B4A !important;
+  opacity: 100% !important;
 }
