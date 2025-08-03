@@ -16,7 +16,7 @@ export const postType = {
         source: "title",
         maxLength: 96,
       },
-      // @ts-ignore
+      // @ts-expect-error - Sanity validation rule type not available in current version
       validation: (Rule) => Rule.required(),
     },
     {
@@ -84,7 +84,7 @@ export const postType = {
       author: "author.name",
       media: "mainImage",
     },
-    // @ts-ignore
+    // @ts-expect-error - Sanity preview selection type not available in current version
     prepare(selection) {
       const { author } = selection;
       return {
