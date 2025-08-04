@@ -5,7 +5,7 @@ export async function getAllCarModels() {
     *[_type == "carModel"] | order(title asc) {
       _id,
       title,
-      slug
+      slug,
     }
   `;
   const data = await client.fetch(query);

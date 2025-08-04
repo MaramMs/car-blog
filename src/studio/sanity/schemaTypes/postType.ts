@@ -30,8 +30,12 @@ export const postType = {
       type: "image",
       title: "Main Image",
       options: { hotspot: true },
-      // احذف الـ fields هنا إذا النسخة قديمة ولا تدعمها
-      // لو حبيت تضيف alt ممكن تعمله حقل string منفصل خارج هذا الحقل
+    },
+    {
+      name: "gallery",
+      title: "معرض الصور",
+      type: "array",
+      of: [{ type: "image", options: { hotspot: true } }],
     },
     {
       name: "price",

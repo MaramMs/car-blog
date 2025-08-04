@@ -19,6 +19,7 @@ const PostsList = () => {
     fetchData();
   }, []);
 
+  console.log(posts ,'posts')
 
 
   return (

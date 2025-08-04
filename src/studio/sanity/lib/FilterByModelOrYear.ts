@@ -62,7 +62,9 @@ export async function filterPosts({
       year
     },
     mainImage { asset->{ url } },
-    category->{ title, slug }
+    category->{ title, slug },
+    publishedAt,
+    body
   }
 `;
 

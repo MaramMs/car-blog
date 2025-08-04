@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import React from "react";
 import { CiSearch } from "react-icons/ci";
 import arrow from "../../../public/assets/arrow.svg";
 import carHero from "../../../public/assets/hero-car.png";
@@ -16,6 +15,7 @@ const Hero = ({
   classes,
   setSearchTerm,
   searchTerm,
+  tags
 }) => {
   return (
     <div
@@ -35,7 +35,7 @@ const Hero = ({
         className={`${width} relative z-20 flex flex-col lg:flex-row items-center justify-center md:justify-between px-4 sm:px-6 md:px-10 py-6 gap-6  mx-auto`}
       >
         <div className="text-center lg:text-right flex flex-col gap-[16px] max-w-full lg:max-w-[45%]">
-          <h1 className="classes text-white  font-bold text-[20px] sm:text-[26px] md:text-[32px] lg:text-[50px] leading-[.3]">
+          <h1 className="classes text-white  font-bold text-[20px] sm:text-[26px] md:text-[32px] lg:text-[50px] leading-[1.2]">
             {title}
           </h1>
           <p className="text-white text-[14px] sm:text-[16px] md:text-[18px] leading-relaxed w-full m-0">
@@ -67,27 +67,25 @@ const Hero = ({
                 value={searchTerm}
                 type="text"
                 placeholder="بحث"
-                className="w-full h-[44px] border border-[#D0D5DD] rounded-[8px] py-[10px] pr-[40px] pl-[14px] bg-white shadow-md text-sm"
+                className="w-full h-[44px] border border-[#D0D5DD] rounded-[8px] py-[10px] pr-[40px] pl-[14px] bg-white shadow-md text-sm text-black"
               />
             </div>
             <div className="flex flex-wrap justify-center lg:justify-start gap-2">
-              <div className="rounded-[8px] bg-[#DD3B4A] px-3 py-2">
-                <p className="text-white text-sm font-normal">سيارات هجينة</p>
-              </div>
-              <div className="rounded-[8px] border border-[#D0D5DD] px-3 py-2">
-                <p className="text-white text-sm font-normal">
-                  سيارات دفع رباعي
-                </p>
-              </div>
-              <div className="rounded-[8px] border border-[#D0D5DD] px-3 py-2">
-                <p className="text-white text-sm font-normal">
-                  سيارات كهربائية
-                </p>
-              </div>
+
+              {
+                tags.map((tag, index) => (
+                  <div key={index} className="rounded-[8px] bg-[#DD3B4A] px-3 py-2">
+                    <p className="text-white text-sm font-normal">{tag}</p>
+                  </div>
+                ))
+              }
+
             </div>
           </div>
         )}
+
       </div>
+
     </div>
   );
 };

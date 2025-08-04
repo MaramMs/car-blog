@@ -1,29 +1,3 @@
-// import React from 'react'
-// import { Col, Row } from 'react-bootstrap';
-// import { BsFilterLeft } from "react-icons/bs";
-// import { IoIosArrowDown } from 'react-icons/io';
-
-
-// const Filter = () => {
-//   return (
-//    <Row className=' justify-between items-center'>
-//     <Col className='flex gap-2'>
-//     <BsFilterLeft className='text-[#1B2532]'/>
-//     <p className='text-[#1B2532] font-medium text-[18px]'>ترتيب حسب</p>
-
-//     </Col>
-//     <Col>
-// <IoIosArrowDown className='text-[#1B2532]'/>
-
-//     </Col>
-//    </Row>
-//   )
-// }
-
-// export default Filter
-
-
-
 import React from 'react'
 import { BsFilterLeft } from "react-icons/bs";
 import { IoIosArrowDown } from 'react-icons/io';

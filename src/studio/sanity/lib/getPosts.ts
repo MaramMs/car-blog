@@ -25,6 +25,11 @@ export async function getPosts() {
         category->{
       title,
       slug
+    },
+    gallery[] {
+      asset->{
+        url
+      }
     }
     }`;
     const posts = await client.fetch(query);

@@ -8,8 +8,7 @@ import "swiper/css/pagination";
 
 import CarCard from "./Card";
 
-const SwiperCustom = ({swiperData }) => {
-  console.log(swiperData,'swiperData')
+const SwiperCustom = ({ swiperData }) => {
   return (
     <div className="relative w-full">
       <Swiper
@@ -49,9 +48,11 @@ const SwiperCustom = ({swiperData }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      
-      <div className="!swiper-button-prev !custom-nav !text-red-600 !left-0 !top-1/2 !-translate-y-1/2 !absolute !z-10" />
-      <div className="!swiper-button-next !custom-nav !text-red-600 !right-0 !top-1/2 !-translate-y-1/2 !absolute !z-10" />
+      <div className="swiper-button-prev custom-nav text-red-600 left-0 top-1/2 -translate-y-1/2 absolute z-10" />
+      <div className="swiper-button-next custom-nav text-red-600 right-0 top-1/2 -translate-y-1/2 absolute z-10" />
+
+
+
     </div>
   );
 };

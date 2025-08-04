@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { FiFilter } from "react-icons/fi";
 import YearRangeSlider from "./YearRangeSlider";
 import { IoIosArrowDown } from "react-icons/io";
-// import { getAllCarModels } from '../../sanity/lib/getCarModal';
 
 const FilterModal = ({
   models,
@@ -59,7 +58,7 @@ const FilterModal = ({
                     className="form-checkbox text-red-600"
                     onChange={() => toggleModel(label)}
                   />
-                  <span>{label.title}</span>
+                  <span className='text-[#1B2532] text-[14px] font-normal'>{label.title}</span>
                 </label>
               );
             })}

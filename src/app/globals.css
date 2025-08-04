@@ -14,12 +14,21 @@ body {
 
 }
 /* swiper */
+
 .swiper-pagination {
+  position: absolute !important;
+  bottom: 10px !important;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10 !important;
+}
+
+/* .swiper-pagination {
   bottom: 10px !important;
   z-index: 10 !important;
   position: absolute !important;
   height: 20px;
-}
+} */
 .swiper-pagination-bullet-active {
   background-color: #dd3b4a !important;
 }
@@ -31,9 +40,6 @@ body {
   opacity: 1;
 }
 
-.swiper-pagination-bullet-active {
-  background-color: #dd3b4a;
-}
 .home-swiper .swiper-pagination{
   bottom: 57px !important;
   left: 20px!important;

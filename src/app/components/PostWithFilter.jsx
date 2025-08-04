@@ -120,7 +120,7 @@ import CategoryTabs from "./CategoryTab";
 import Filter from "./Filter";
 import FilterModal from "./FilterModal";
 
-export default function PostsWithFilter({ posts, searchTerm, setSearchTerm }) {
+export default function PostsWithFilter({ posts, searchTerm}) {
   const [filteredResults, setFilteredResults] = useState(posts);
   const [selectedModels, setSelectedModels] = useState([]);
   const [yearRange, setYearRange] = useState([2000, 2025]);
@@ -135,6 +135,7 @@ export default function PostsWithFilter({ posts, searchTerm, setSearchTerm }) {
     fetchModels();
   }, []);
 
+  
   const handleFilter = async () => {
     const modelIds = selectedModels.map((m) => m._id);
     const [minYear, maxYear] = yearRange;
@@ -177,6 +178,7 @@ export default function PostsWithFilter({ posts, searchTerm, setSearchTerm }) {
         <div className="w-full lg:w-5/6 grid grid-cols-1 md:grid-cols-2 gap-6">
           {finalPosts.length > 0 ? (
             finalPosts.map((item, index) => {
+              console.log(item ,'item')
               const firstBlock = item.body?.[0];
               const description =
                 firstBlock?.children?.[0]?.text?.slice(0, 100) + "..." || "";
@@ -191,7 +193,7 @@ export default function PostsWithFilter({ posts, searchTerm, setSearchTerm }) {
                   slug={item?.slug?.current}
                   description={description}
                   buttonText="اقرأ المزيد"
-                  padding="p-0"
+                  padding="24px"
                   href={`/blog/${item?.slug?.current}`}
                 />
               );
