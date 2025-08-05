@@ -36,6 +36,9 @@ export const postType = {
       title: "معرض الصور",
       type: "array",
       of: [{ type: "image", options: { hotspot: true } }],
+      // @ts-expect-error - Sanity validation rule type not available in current version
+
+      validation: Rule => Rule.required().min(1).error("يجب إضافة صورة واحدة على الأقل!"),
     },
     {
       name: "price",
