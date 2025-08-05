@@ -2,6 +2,7 @@
 import SwiperClient from "../../components/SwiperClient";
 import SwiperCustom from "../../components/SwiperCustom";
 
+import { notFound } from 'next/navigation';
 import { client } from "../../../studio/sanity/lib/client";
 import PortableTextComponent from "../../components/PortableTextComponent";
 
@@ -40,6 +41,9 @@ export default async function BlogPostPage({ params }) {
   }
 `;
   const post = await client.fetch(query, { slug });
+  if (!post) {
+    notFound();
+  }
   const queryLatest = `
   *[_type == "post"] | order(publishedAt desc)[0...3] {
     title,
@@ -62,12 +66,12 @@ export default async function BlogPostPage({ params }) {
 
   const latestPosts = await client.fetch(queryLatest);
 
-  const formattedDate = new Date(post.publishedAt)?.toISOString()?.split("T")[0];
+  const formattedDate = post.publishedAt ? new Date(post.publishedAt).toISOString().split("T")[0] : "تاريخ غير متوفر";
   return (
     <div className="container mx-auto  my-[120px] flex justify-between flex-col">
       <div className="mb-[120px] home-swiper">
 
-        <SwiperClient images={post?.gallery?.map((item) => item.asset.url)} />
+        <SwiperClient images={Array.isArray(post.gallery) ? post.gallery.map((item) => item.asset.url) : []} />
       </div>
       <div className="flex flex-col gap-[32px] flex-1">
         <div className="flex flex-col gap-[16px]">
